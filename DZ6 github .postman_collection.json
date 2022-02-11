@@ -1,0 +1,758 @@
+{
+	"info": {
+		"_postman_id": "9b7459f0-dbff-49b7-ac61-00b038ca5e46",
+		"name": "DZ6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Workspace",
+			"item": [
+				{
+					"name": "Get workspaces",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/workspaces",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "Get all projects",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/projects",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get project by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/projects/620173f1fcf84630572718c3",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"projects",
+								"620173f1fcf84630572718c3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"My API Project2\",\r\n  \"clientId\": \"\",\r\n  \"isPublic\": \"false\",\r\n  \"color\": \"#f44336\",\r\n  \"note\": \"This is project's note\",\r\n  \"billable\": \"true\",\r\n  \"public\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/projects",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"62018135fcf8463057272134\",\r\n    \"name\": \"My API Project 5\",\r\n    \"hourlyRate\": {\r\n        \"amount\": 0,\r\n        \"currency\": \"USD\" },\r\n    \"clientId\": \"\",\r\n    \"workspaceId\": \"61f4198c45f4e23c8b47e517\",\r\n    \"billable\": true,\r\n    \"memberships\": [\r\n        {\r\n            \"userId\": \"61f4198c45f4e23c8b47e516\",\r\n            \"hourlyRate\": null,\r\n            \"costRate\": null,\r\n            \"targetId\": \"61fae6f47fb0cd1d2bfa363c\",\r\n            \"membershipType\": \"PROJECT\",\r\n            \"membershipStatus\": \"ACTIVE\"\r\n        }\r\n    ],\r\n    \"color\": \"#f44336\",\r\n    \"estimate\": {\r\n        \"estimate\": \"PT0S\",\r\n        \"type\": \"AUTO\"\r\n    },\r\n    \"archived\": false,\r\n    \"duration\": \"PT0S\",\r\n    \"clientName\": \"\",\r\n    \"note\": \"This is project's note\",\r\n    \"costRate\": null,\r\n    \"timeEstimate\": {\r\n        \"estimate\": \"PT0S\",\r\n        \"type\": \"AUTO\",\r\n        \"resetOption\": null,\r\n        \"active\": false,\r\n        \"includeNonBillable\": true\r\n    },\r\n    \"budgetEstimate\": null,\r\n    \"public\": false,\r\n    \"template\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/projects/62018135fcf8463057272134",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"projects",
+								"62018135fcf8463057272134"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete project",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"62018135fcf8463057272134\",\r\n    \"name\": \"My API Project5\",\r\n    \"hourlyRate\": {\r\n        \"amount\": 0,\r\n        \"currency\": \"USD\" },\r\n    \"clientId\": \"\",\r\n    \"workspaceId\": \"61f4198c45f4e23c8b47e517\",\r\n    \"billable\": true,\r\n    \"memberships\": [\r\n        {\r\n            \"userId\": \"61f4198c45f4e23c8b47e516\",\r\n            \"hourlyRate\": null,\r\n            \"costRate\": null,\r\n            \"targetId\": \"61fae6f47fb0cd1d2bfa363c\",\r\n            \"membershipType\": \"PROJECT\",\r\n            \"membershipStatus\": \"ACTIVE\"\r\n        }\r\n    ],\r\n    \"color\": \"#f44336\",\r\n    \"estimate\": {\r\n        \"estimate\": \"PT0S\",\r\n        \"type\": \"AUTO\"\r\n    },\r\n    \"archived\": false,\r\n    \"duration\": \"PT0S\",\r\n    \"clientName\": \"\",\r\n    \"note\": \"This is project's note\",\r\n    \"costRate\": null,\r\n    \"timeEstimate\": {\r\n        \"estimate\": \"PT0S\",\r\n        \"type\": \"AUTO\",\r\n        \"resetOption\": null,\r\n        \"active\": false,\r\n        \"includeNonBillable\": true\r\n    },\r\n    \"budgetEstimate\": null,\r\n    \"public\": false,\r\n    \"template\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/projects/62018135fcf8463057272134\n",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"projects",
+								"62018135fcf8463057272134\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update project estimate",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"timeEstimate\": {\r\n    \"estimate\": \"PT1H0M0S\",\r\n    \"type\": \"MANUAL\",\r\n    \"active\": false,\r\n    \"resetOption\": \"MONTHLY\"\r\n  },\r\n  \"budgetEstimate\": {\r\n    \"estimate\": 1100,\r\n    \"type\": \"MANUAL\",\r\n    \"active\": true,\r\n    \"resetOption\": null\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/projects/62017c80d234b02f7c6bf8aa/estimate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"projects",
+								"62017c80d234b02f7c6bf8aa",
+								"estimate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Get all clients",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": \"5b1e52ff0cb8792ed75992c1\",\r\n    \"name\": \"Мария\",\r\n    \"workspaceId\": \"5c0fe3290cl84304845dbf1f\",\r\n    \"archived\": \"false\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/clients",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by clients ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": \"5b1e52ff0cb8792ed75992c1\",\r\n    \"name\": \"Мария\",\r\n    \"workspaceId\": \"5c0fe3290cl84304845dbf1f\",\r\n    \"archived\": \"false\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/clients/{{clientId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"clients",
+								"{{clientId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Client15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/clients",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Client15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/clients/{{clientId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"clients",
+								"{{clientId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete client",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Client2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/clients/{{clientId}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"clients",
+								"{{clientId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "Find tags on workspace",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  {\r\n    \"id\": \"5a7c5d2db079870147fra234\",\r\n    \"name\": \"Tag\",\r\n    \"workspaceId\": \"5g3g57bt0cb2548e22e6l9cd\",\r\n    \"archived\": \"false\"\r\n  }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/tags",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get tag by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tag\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/tags/{{tagid2}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"tags",
+								"{{tagid2}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new tag",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Tag 11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/tags",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update tag",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"archived\": false,\r\n  \"name\": \"Tag 12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/tags/62016ffcd234b02f7c6bf047",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"tags",
+								"62016ffcd234b02f7c6bf047"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete tag",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"archived\": false,\r\n  \"name\": \"Tag 10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/tags/62016ffcd234b02f7c6bf047",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"tags",
+								"62016ffcd234b02f7c6bf047"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Find tasks on project",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/workspaces/{{workspaceId}}/projects/{{projectId}}/tasks",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"workspaces",
+								"{{workspaceId}}",
+								"projects",
+								"{{projectId}}",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TimeEntry",
+			"item": []
+		},
+		{
+			"name": "User",
+			"item": []
+		},
+		{
+			"name": "Group",
+			"item": []
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get user info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Api-Key",
+								"value": "YTcwMDAzNTEtMTU3YS00NDUyLTgxZjgtNGI1N2I5Yzg1ZTU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/user",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://api.clockify.me/api/v1"
+		},
+		{
+			"key": "workspaceId",
+			"value": "61f4198c45f4e23c8b47e517"
+		},
+		{
+			"key": "projectId",
+			"value": "61faedee7fb0cd1d2bfa3be6"
+		},
+		{
+			"key": "clientId",
+			"value": "61faf2c9ad535a1e8858044c"
+		},
+		{
+			"key": "tagid2",
+			"value": "61fc3ccd7ad10f5061c83116"
+		},
+		{
+			"key": "TaskId",
+			"value": "61fc4361bd75d9413d814792"
+		}
+	]
+}
